@@ -1,0 +1,160 @@
+.movies-detail{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__title{
+        width: 70%;
+        @include laptop{
+            width: 100%;
+        }
+    }
+    &__description{
+        margin-top: 1.25rem; 
+        display: flex;
+        align-items: center;
+        @include tablet-md{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__rating{
+        display: flex;
+        align-items: center;
+        
+        &--stars{
+            fill: $blue-color;
+            display: flex;
+            .grey{ fill: $categories-color; }
+            & svg{
+                height: 2.5rem;
+                width: 3rem; 
+            }
+        }
+        &--number{
+            margin-top: .75rem;
+            display: inline-block;
+            color: $categories-color;
+            margin-left: 1.5rem;
+        }
+    }
+    
+    &__type{
+        margin-top: .75rem;
+        margin-left: 30%;
+        @include tablet-sm{
+            margin-top: 1.5rem;
+            margin-left: 2%;
+        }
+        &--pg-rating{ 
+            margin-left: .5rem;
+            padding: .75rem 1.25rem;
+            border-radius: 2rem;
+            background: $tomato-red-color;
+            color: #fff !important;
+            text-align: center;
+        }
+    }
+
+    &__paragraph{
+        width: 40%;
+        @include laptop{ width: 70%;}
+        margin: 3rem 0;
+        @include tablet-sm{
+            width: 100%;
+            text-align: left;
+        }
+    }
+    &__links{ 
+        margin: 4rem 0;
+        display: flex;
+    }
+    &__link{
+        padding: 1.75rem 2.5rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        border-radius: .75rem;
+        transition: all 0.3s;
+        & img, & i{
+            height: 1rem; 
+            width: 1rem;
+            margin-right: 1rem;
+        }
+        &--trailer{
+            color: $white-color !important; 
+            background-color: darken($blue-color, 10%);
+        }   
+        &--trailer:hover{ background-color: $blue-color; }
+
+        &--favourite{
+            color: $tomato-red-color;
+            background: transparent;
+            font-weight: bold;
+            margin-left: 4rem;
+            border: .2rem solid $tomato-red-color;
+        }
+
+        &--favourite:hover{
+            cursor: pointer;
+            color: $white-color !important;
+            background-color: $tomato-red-color !important;
+            @include tablet{ 
+                color: $tomato-red-color;
+                border: .2rem solid $tomato-red-color;
+                background-color: transparent;
+            }
+        }
+
+        &--favourite:focus{ outline: none; }
+    }
+
+.selected{
+    color: $white-color !important;
+    background-color: $tomato-red-color;
+}
+
+    &__cast{
+        margin: 3rem 0;
+        &-detail{
+            margin-top: 2rem;
+            display: grid;
+            grid-template-rows: max-content;
+            grid-auto-rows: max-content;
+            grid-template-columns: repeat(auto-fit, 10rem);
+            @include tablet-sm{
+                grid-template-columns: repeat(auto-fit);
+            }
+            grid-gap: 2.5rem;
+            @include tablet-sm{ grid-gap: 1.5rem }
+            & figure img{
+                width: 100%;
+            }
+            & figcaption{
+                margin-top: 1.5rem;
+            }
+        }
+    }
+
+    &__direction{
+        margin-top: 4rem;
+        & h3{ margin-bottom: 2rem;}
+        & p{ margin-bottom: .5rem;}
+    }
+
+    &__poster{
+        display: none;
+        @include desktop{ display: block; }
+        height: 60vh;
+        position: absolute;
+        right: 0; top: 18%;
+        transform: translateX(-20%);
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 0 2rem rgba($blue-color, 0.5);
+        & img{
+            height: 100%;
+        }
+    }
+
+}

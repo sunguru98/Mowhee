@@ -1,0 +1,144 @@
+.movies{
+    box-sizing: border-box;
+    padding: 5rem 7.5rem;
+    flex: 1;
+    @include tablet-md{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    @include tablet-sm{
+        flex-basis: 100%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    background-color: $main-color;
+    
+
+    @include tablet{
+        position: relative;
+    }
+
+    &__categories{
+        z-index: 4;
+        position: relative;
+        &-recommended, &-nowplaying{ 
+            margin-top: 5rem; 
+            @include tablet-sm{
+                margin-top: 3rem;
+            }
+            animation: moveBottomToTop 0.5s 0.7s linear backwards;
+            @include tablet{ animation: moveBottomToTop 0.5s linear backwards; }
+        }
+        &-recommended,
+        &-nowplaying{
+            &-list{
+                margin-top: 1.5rem;
+                @include tablet-md{
+                    margin-top: 2rem;
+                }
+                display: grid;
+                grid-template-rows: 33rem;
+                grid-auto-rows: 33rem;
+                grid-template-columns: repeat(5, 1fr);
+                grid-gap: 1rem;
+                text-align: center;
+
+                @include laptop{
+                    grid-template-rows: 35rem;
+                    grid-auto-rows: 35rem;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-row-gap: 2rem;
+                }
+
+                @include tablet-md{
+                    grid-template-rows: 38rem;
+                    grid-auto-rows: 38rem;
+                    grid-template-columns: repeat(2, 1fr); 
+                }
+                @include tablet-sm{
+                    grid-row-gap: 1rem;
+                    width: auto;
+                }
+                }
+    
+                &-item{
+                    padding: 1.5rem;
+                    &--image{width: 75%; height: 70%; margin-bottom: 1.25rem; 
+                        @include laptop{
+                            width: 90%; height:65%;
+                        }
+                        @include tablet-md{
+                            width: 60%; height: 80%;
+                        }
+                        @include tablet-sm{
+                            width: auto;
+                        }
+                    }
+                    
+                    &--name{ margin-bottom: .5rem; }
+                    transition: all .5s;
+                }
+
+                &-item:hover{
+                    background: $sidebar-color;
+                    cursor: pointer;
+                    box-shadow: 0 0 2rem lighten($main-color,10%);                 
+                }
+                &-item:hover &-item--description, 
+                &-item:hover &-item--release-year{
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+        }
+
+        &-recommended, &-nowplaying{
+            &-item{
+                &--description, &--release-year{
+                    visibility: hidden;
+                    opacity: 0;
+                    @include tablet-sm{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                    transition: all .5s;
+                }
+                &--description{
+                    color: $categories-color;
+                }
+                &--release-year{ 
+                    display: block; width: 30%;
+                    margin: 0 auto;
+                    margin-top: 1rem; 
+                    padding: 0.5rem;
+                    background-color: #5f27cd;
+                    border-radius: 2rem;
+                }
+            }
+            span{ color: #fff;  }
+        }
+
+        &-button{
+            animation: fadeIn .5s 1.3s backwards linear;
+            @include tablet{ animation: fadeIn .5s .5s backwards linear; }
+            & .btn-inline{
+            cursor: pointer;
+            border:none;
+            background: rgba($blue-color, 0.9);
+            border-radius: 2px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 45%;
+            transform: translateY(-45%); 
+                & img{
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+            &--prev{ left: -2%; }
+            &--next{ right: -2%; }
+        }
+    }
+}

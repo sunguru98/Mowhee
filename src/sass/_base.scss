@@ -1,0 +1,67 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{ 
+    font-size: 62.5%; 
+    @include laptop{
+        font-size: 60%;
+    }
+    @include laptop-md{
+        font-size: 50%;
+    }
+}
+body{
+    height: 100vh;
+    background: $main-color;
+    // background: linear-gradient(to bottom right, $blue-color 10%, darken($blue-color, 15%));
+}
+ul{ 
+    list-style: none;
+}
+ 
+.addFadeIn{ animation: fadeIn 200ms ease-out; }
+.white{ color: #fff; }
+.container{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+//Basic hide in desktop an show on small devices
+.movies .movies__user-panel .sidebar__logo,
+.movies .movies__user-panel .movies__navigation,
+.overlay{
+    display: none;
+
+    @include tablet{
+        display: block;
+    }
+}
+
+.movies .movies__user-panel .sidebar__logo{
+    @include tablet{
+        display: flex;
+        justify-content: flex-start;
+        margin-right: -3rem;
+    }
+}
+
+.movies{ position: relative; }
+//Loader 
+.loader{
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    border: 4px solid transparent;
+    border-top-color:$blue-color;
+    border-bottom-color:$blue-color;
+    animation: spin 2s infinite linear;
+    margin: 5% auto;
+  }
+

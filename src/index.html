@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mowhee</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fonts/avenir-font/style.css">
+    <link rel="stylesheet" href="./sass/main.scss">
+</head>
+<body>
+    <div class="container">
+        <!--For smaller screens-->
+            <div class="overlay">
+                <div class="overlay__user">
+                    <img src="./img/user.jpg" alt="User image" class="movies__user--image">
+                    <span class="movies__user--name">Mike Smith</span>
+                </div>
+                <ul class="wrap-nav">
+                    <li class="wrap-nav--browse">
+                        <h2 class="secondary-heading">Browse Mowhee</h2>
+                        <ul>
+                            <li><a href="#top">Top Rated</a></li>
+                            <li><a href="#tv">Tv On the Air</a></li>
+                            <li><a href="#popular">Popular</a></li>
+                            <li><a href="#upcoming">Upcoming</a></li>
+                        </ul>
+                    </li>
+                    <li class="wrap-nav--categories">
+                        <h2 class="secondary-heading">Categories</h2>
+                        <ul>
+                            <li><a href="#action" data-genreid="28">Action</a></li>
+                            <li><a href="#comedy" data-genreid="35">Comedy</a></li>
+                            <li><a href="#drama" data-genreid="18">Drama</a></li>
+                            <li><a href="#horror" data-genreid="27">Horror</a></li>
+                            <li><a href="#family" data-genreid="10751">Family</a></li>
+                            <li><a href="#music" data-genreid="10402">Music</a></li>
+                            <li><a href="#thriller" data-genreid="53">Thriller</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <!--End for smaller screens-->
+        
+        <!--side bar -->
+        <section class="sidebar">
+            <div class="sidebar__logo">
+                <h1 class="sidebar__logo--name">Mowhee</h1>
+                <img src="./img/mowhee.svg" alt="Mowhee Logo" class="sidebar__logo--img">
+            </div>
+            <div class="sidebar__browse">
+                <h2 class="sidebar__browse-title secondary-heading">
+                    Browse Mowhee
+                </h2>
+                <nav class="sidebar__browse-nav">
+                    <ul class="sidebar__browse-list">
+                        <li class="sidebar__browse-item sidebar__browse-item--1">
+                            <a href="#top" class="sidebar__browse-link sidebar__browse-link--1">Top Rated</a> 
+                        </li>
+                        <li class="sidebar__browse-item sidebar__browse-item--2">
+                            <a href="#tv" class="sidebar__browse-link sidebar__browse-link--2">Tv On the Air</a> 
+                        </li>
+                        <li class="sidebar__browse-item sidebar__browse-item--3">
+                            <a href="#popular" class="sidebar__browse-link sidebar__browse-link--3">Popular</a> 
+                        </li>
+                        <li class="sidebar__browse-item sidebar__browse-item--4">
+                            <a href="#upcoming" class="sidebar__browse-link sidebar__browse-link--4">Upcoming</a> 
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar__categories">
+                <h2 class="sidebar__categories-title secondary-heading">Categories</h2>
+                <nav class="sidebar__categories-nav">
+                    <ul class="sidebar__categories-list">
+                        <li class="sidebar__categories-item sidebar__categories-item--1">
+                            <a href="#action" class="sidebar__categories-link sidebar__categories-link--1" data-genreid="28">Action</a> 
+                        </li>
+                        <li class="sidebar__categories-item sidebar__categories-item--2">
+                            <a href="#comedy" class="sidebar__categories-link sidebar__categories-link--2" data-genreid="35">Comedy</a> 
+                        </li>
+                        <li class="sidebar__categories-item sidebar__categories-item--3">
+                            <a href="#drama" class="sidebar__categories-link sidebar__categories-link--3" data-genreid="18">Drama</a> 
+                        </li>
+                        <li class="sidebar__categories-item sidebar__categories-item--4">
+                            <a href="#horror" class="sidebar__categories-link sidebar__categories-link--4" data-genreid="27">Horror</a> 
+                        </li>
+                        <li class="sidebar__categories-item sidebar__categories-item--5">
+                            <a href="#family" class="sidebar__categories-link sidebar__categories-link--5" data-genreid="10751">Family</a> 
+                        </li>
+                        <li class="sidebar__categories-item sidebar__categories-item--6">
+                            <a href="#music" class="sidebar__categories-link sidebar__categories-link--6" data-genreid="10402">Music</a> 
+                        </li>
+                        <li class="sidebar__categories-item sidebar__categories-item--7">
+                            <a href="#thriller" class="sidebar__categories-link sidebar__categories-link--7" data-genreid="53">Thriller</a> 
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar__legal">Powered by <a target="_blank" href="https://www.themoviedb.org/" class="sidebar__link">The Movie Database</a></div>
+        </section>
+
+        <!-- end of side bar -->
+        
+        <section class="movies">
+            <div class="movies__user-panel">
+                <div class="sidebar__logo hide">
+                    <h1 class="sidebar__logo--name">Mowhee</h1>
+                    <img src="./img/mowhee.svg" alt="Mowhee Logo" class="sidebar__logo--img">
+                </div>
+                    
+                <div class="movies__search">                    
+                    <input type="text" class="movies__search--text">
+                    <img src="./img/search.svg" alt="Search Icon" class="movies__search--btn">
+                </div>
+                        
+                <div class="movies__likes">
+                    <div class="movies__likes--field">
+                            <img src="./img/heart.svg" alt="Heart image" class="movies__likes-image">
+                    </div>
+                    <div class="movies__likes--panel">
+                        <ul class="movies__likes-list">
+                            <!-- <li class="movies__likes-item">
+                                <a href="#" class="movies__likes-link">
+                                    <img src="./img/oruadaar.jpeg" alt="" class="movies__likes-link--img">
+                                    <div class="movies__likes-link-data">
+                                        <h3 class="movies__likes-link-data--name">Oru Adaar Love</h3>
+                                        <p class="movies__likes-link-data--author">Romance</p>   
+                                    </div>
+                                </a>
+                                <span class="movies__likes-delete">
+                                    <img src="./img/cross.svg" alt="Delete Like" class="movies__likes-delete-icon">
+                                </span>
+                            </li> 
+                            <li class="movies__likes-item">
+                                <a href="#" class="movies__likes-link">
+                                    <img src="./img/peranbu.jpeg" alt="" class="movies__likes-link--img">
+                                    <div class="movies__likes-link-data">
+                                        <h3 class="movies__likes-link-data--name">Peranbu</h3>
+                                        <p class="movies__likes-link-data--author">Family</p>   
+                                    </div>
+                                </a>
+                                <span class="movies__likes-delete">
+                                    <img src="./img/cross.svg" alt="Delete Like" class="movies__likes-delete-icon">
+                                </span>
+                            </li>    -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="movies__user">
+                    <img src="./img/user.jpg" alt="User image" class="movies__user--image">
+                    <span class="movies__user--name">Mike Smith</span>
+                </div>
+                <div class="movies__navigation">
+                    <label for="navigation-toggle" class="navigation__button">
+                            <div class="navigation__hamburger"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="movies__specific">
+                <!-- <h1 class="primary-heading movies__specific-title">Action</h1>
+                <ul class="movies__specific-list">
+                    <li class="movies__specific-item">
+                        <a href="#" class="movies__specific-link">
+                            <img src="./img/gboy.jpeg" alt="" class="movies__specific-item--image">
+                        <h2 class="movies__specific-item--name">Gully Boy</h2>
+                        <span class="movies__specific-item--description">Action</span>
+                        <span class="movies__specific-item--release-year">2003</span>
+                    
+                        </a>
+                        </li>
+                </ul>
+                
+            -->
+                    <!-- <button class="btn-inline movies__specific-button--prev">
+                        <img src="./img/prev.svg" alt="Previous icon" class="button-icon">
+                    </button>
+                    <button class="btn-inline movies__specific-button--next">
+                        <img src="./img/next.svg" alt="Next icon" class="button-icon">
+                    </button> -->
+                
+                 
+             </div>  
+        
+             <div class="movies-detail__group">
+                    <!--<h1 class="movies-detail__title">Spiderman Into the Spiderverse</h1>
+                    <div class="movies-detail__description">
+                        <div class="movies-detail__rating">
+                            <div class="movies-detail__rating--stars">
+                                <svg class="title__stars-icon">
+                                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                                </svg>
+                                <svg class="title__stars-icon">
+                                     <use xlink:href="img/sprite.svg#icon-star"></use>
+                                 </svg>
+                                 <svg class="title__stars-icon">
+                                     <use xlink:href="img/sprite.svg#icon-star"></use>
+                                 </svg>
+                                 <svg class="title__stars-icon">
+                                     <use xlink:href="img/sprite.svg#icon-star"></use>
+                                 </svg>
+                                 <svg class="title__stars-icon grey">
+                                     <use xlink:href="img/sprite.svg#icon-star"></use>
+                                 </svg>
+                            </div>
+                            <div class="movies-detail__rating--number">
+                                <span class="movies-detail__stars--rating"><span class="white">4.5</span>/5</span>
+                            </div>
+                        </div>
+                        <div class="movies-detail__type">
+                            <span>Action &middot; 2hr 30mins &middot; 2019</span>
+                        </div>
+                    </div>
+                    <div class="movies-detail__paragraph">
+                        <p>Teen Miles Morales becomes Spider-Man of his reality, crossing his path with five counterparts from another dimensions to stop a threat for all realities.</p>
+                    </div>
+                    <div class="movies-detail__links">
+                        <a href="#" target="_blank" class="movies-detail__link movies-detail__link--trailer"><img src="./img/play.svg" alt="Play icon"> Watch Trailer</a>
+                        <a href="#" class="movies-detail__link movies-detail__link--favourite"><i class="fas fa-heart"></i>Add to Favorites</a>
+                    </div>
+                    <div class="movies-detail__cast">
+                        <h3 class="movies-detail__cast-title">Cast</h3>
+                        <div class="movies-detail__cast-detail">
+                            <figure class="movies-detail__cast-detail--1">
+                                <img src="./img/img1.jpg" alt="Picture 1">
+                                <figcaption>Shameik <br> Moore</figcaption>
+                            </figure>
+                            <figure class="movies-detail__cast-detail--2">
+                                <img src="./img/img2.jpg" alt="Picture 2">
+                                <figcaption>Jake <br> Jhonson</figcaption>
+                            </figure>
+                            <figure class="movies-detail__cast-detail--3">
+                                <img src="./img/img3.jpg" alt="Picture 3">
+                                <figcaption>Hailee <br> Steinfield</figcaption>
+                            </figure>
+                            <figure class="movies-detail__cast-detail--4">
+                                <img src="./img/img4.jpg" alt="Picture 4">
+                                <figcaption>Nicolas <br> Cage</figcaption>
+                            </figure>
+                            <figure class="movies-detail__cast-detail--5">
+                                <img src="./img/img5.jpg" alt="Picture 6">
+                                <figcaption>Liev <br> Schreiber</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="movies-detail__direction">
+                        <h3 class="movies-detail__direction-title">Directed By</h3>
+                        <p class="movies-detail__direction--1">Peter Ramsay</p>
+                        <p class="movies-detail__direction--2">Bob Persichetti</p>
+                        <p class="movies-detail__direction--3">Rodney Rothman</p>
+                    </div>
+                
+                <div class="movies-detail__poster">
+                    <img src="./img/spiderposter.jpg" alt="Movie Poster">
+                </div> -->
+             </div>
+            <div class="movies__categories movies__categories--1">
+                <!--<div class="movies__categories-recommended">
+                     <h1 class="primary-heading movies__categories-recommended-title">Top Rated</h1>
+                    <ul class="movies__categories-recommended-list">
+<li class="movies__categories-recommended-item">
+    <a href="#" class="movies__categories-recommended-link">
+        <img src="./img/gboy.jpeg" alt="" class="movies__categories-recommended-item--image">
+    <h2 class="movies__categories-recommended-item--name">Gully Boy</h2>
+    <span class="movies__categories-recommended-item--description">Action</span>
+    <span class="movies__categories-recommended-item--release-year">2003</span>
+
+    </a>
+    </li>
+                    </ul>
+                </div>
+                <div class="movies__categories-button">
+                    <button class="btn-inline movies__categories-button--prev">
+                        <img src="./img/prev.svg" alt="Previous icon" class="button-icon">
+                    </button>
+                    <button class="btn-inline movies__categories-button--next">
+                        <img src="./img/next.svg" alt="Next icon" class="button-icon">
+                    </button> 
+                </div> -->
+            </div>
+            <div class="movies__categories movies__categories--2">
+                 <!--  <div class="movies__categories-nowplaying">
+                   <h1 class="primary-heading movies__categories-nowplaying-title">Now Playing</h1>
+                    <ul class="movies__categories-nowplaying-list">
+                        
+<li class="movies__categories-nowplaying-item">
+    <a href="#" class="movies__categories-nowplaying-links">
+        <img src="./img/dd2.jpeg" alt="" class="movies__categories-nowplaying-item--image">
+        <h2 class="movies__categories-nowplaying-item--name">Dhillukku Dhuddu 2</h2>
+        <span class="movies__categories-nowplaying-item--description">Action</span>
+        <span class="movies__categories-nowplaying-item--release-year">2003</span>
+    </a>
+</li>
+                    </ul>
+                </div>
+                <div class="movies__categories-button">
+                     <button class="btn-inline movies__categories-button--prev">
+                        <img src="./img/prev.svg" alt="Previous icon" class="button-icon">
+                    </button>
+                    <button class="btn-inline movies__categories-button--next">
+                        <img src="./img/next.svg" alt="Next icon" class="button-icon">
+                    </button> 
+                </div> -->
+            </div> 
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

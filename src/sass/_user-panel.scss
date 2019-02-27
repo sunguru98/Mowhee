@@ -1,0 +1,138 @@
+.movies__user-panel{
+    animation: fadeIn 0.6s 0.4s backwards linear;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet-sm{
+        flex-wrap: wrap;
+    }
+    
+    @include tablet{
+        position: relative;
+        
+    }
+}
+
+.movies__search{
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    margin-right: auto;
+    @include tablet{
+        margin-left: 1rem;
+    }
+    @include tablet-sm{
+        margin-top: 2rem;
+        margin-left: 0;
+        flex-basis: 100%;
+        order: 1;
+    }
+    
+    &--text{
+        border: none;
+        width: 4rem; 
+        height: 4rem;
+        padding: 2rem;
+        border-radius: 3rem;
+        cursor: pointer;   
+        background: darken($blue-color, 12%);
+        color: $white-color;
+        transition: width 0.5s ease-in-out;
+        margin-right: -2.75rem;
+        
+    }
+    &--text:focus{ outline: none; } 
+    &--text::placeholder{
+        color: $white-color;
+    }
+    &--btn{ width: 1.5rem; height: 1.5rem; cursor: pointer; }
+    &--info{ 
+        color: $blue-color;
+        margin-top: .5rem;
+        margin-left: 3rem;
+    }
+}
+
+.movies__likes{
+    margin-left: auto;
+    margin-right: 3rem;
+    @include tablet-sm{ margin-right: 0 }
+    position: relative;
+    &-image{
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+    }
+    &--field:hover &-image{ transform: scale(1.2)}
+    &--panel:hover, &--field:hover + &--panel{
+        visibility: visible;
+        opacity: 1;
+        z-index: 5;
+    }
+    &--panel{
+        transition: all 0.5s;
+        visibility: none;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        z-index: 0;
+        margin-top: 2rem;
+        width: 35rem;
+        padding: 2rem 0;
+        border-radius: .5rem;
+        background-color: lighten($sidebar-color, 8%);
+    }
+    &-item{ display: flex;
+        align-items: center; 
+    padding: 1rem 3rem;}
+    &-link{
+        display: flex;
+        align-items: center;
+        &--img{
+            height: 10rem;
+            margin-right: 3rem;
+        }
+    }
+    &-item:hover{
+        background-color: lighten($main-color, 20%);
+    }
+    &-item:hover &-delete{
+        visibility: visible;
+        opacity: 1;
+    }
+    &-item:not(:last-child){ margin-bottom: 2rem; }
+    &-delete{
+        cursor: pointer;
+        visibility: hidden;
+        opacity: 0;
+        @include tablet {
+            visibility: visible;
+            opacity: 1;
+        }
+        background-color: $blue-color;
+        border-radius: 100%;
+        padding: 1rem;
+        margin-left: auto;
+        transition: all 0.5s;
+        &-icon{
+            display: flex;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+}
+
+.movies__user{
+    display: flex;
+    align-items: center;
+    @include tablet-sm{
+        display: none;
+    }
+    &--image{
+        height: 5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+}
