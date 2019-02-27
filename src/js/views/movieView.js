@@ -34,7 +34,7 @@ const renderStars = (rating)=>{
     for(let count=0; count<rating; count++){
         markup+= `
         <svg class="title__stars-icon">
-            <use xlink:href="/sprite.0d5641f1.svg#icon-star"></use>
+            <use xlink:href="/sprite.svg#icon-star"></use>
         </svg>`
     }
     for(let count=0; count<5-rating; count++){
