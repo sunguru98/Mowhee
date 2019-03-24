@@ -26,10 +26,11 @@ export const getDomElements = {
 export let apiKey = "7d0cf763ad63814289ad165396c4738d";
 
 export const recieveConfigData = ()=>{
-    return JSON.parse(localStorage.getItem("configData"));
+   return JSON.parse(localStorage.getItem("configData"));
 }
 
 export const recieveGenres = ()=>{
+    console.log(JSON.parse(localStorage.getItem("genresData")));
     return JSON.parse(localStorage.getItem("genresData"));
 }
 

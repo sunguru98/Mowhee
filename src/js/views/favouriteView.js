@@ -24,7 +24,7 @@ export const createFavouriteMovieInPanel = (movieId, movieTitle, moviePosterImag
             </div>
         </a>
         <span class="movies__likes-delete">
-            <img src="/cross.aaba919b.svg" alt="Delete Like" class="movies__likes-delete-icon">
+            <img src="/cross.svg" alt="Delete Like" class="movies__likes-delete-icon">
         </span>
     </li>
     `

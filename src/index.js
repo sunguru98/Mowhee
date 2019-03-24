@@ -16,7 +16,6 @@ const capitaliseLetters = (string)=>{
 
 const getMoviesBasedOnCategory = async ()=>{
     let allGenres = recieveGenres().genres;
-    console.log(allGenres);
     let gId = allGenres.find(genre => genre.name == capitaliseLetters(window.location.hash.replace("#", ""))).id;
     state.categoryObj = new Search("category");
     searchView.clearMovies();
@@ -31,13 +30,11 @@ const getMoviesBasedOnBrowse = async(choice)=>{
     searchView.clearMovies();
     bringLoader(getDomElements.moviesSpecific);
     state.receivedMovies = await state.browseObj.getBrowsedMovies(choice);
-    console.log(state.receivedMovies);
     clearLoader();
     searchView.renderMoviesToUI(state.receivedMovies, capitaliseLetters(window.location.hash.replace("#", "")));
 }
 
 const bringMainMenu = async ()=>{
-    console.log("sss");
     state.searchObj = new Search("loadingMovies");
     searchView.clearMovies();
     bringLoader( getDomElements.moviesNowPlaying);
@@ -132,18 +129,18 @@ window.addEventListener("load", async ()=>{
 
     }
     if(getDomElements.moviesDetailClass || window.location.hash){
-            if(["#action", "#comedy", "#drama", "#family", "#horror", "#music", "#thriller"].findIndex(cat => cat == window.location.hash)===-1){
-                if(["#top", "#tv", "#popular", "#upcoming"].findIndex(cat => cat == window.location.hash)===-1){
-                    getMovieDetails(window.location.hash);
-                }
-                else{
-                    getMoviesBasedOnBrowse(window.location.hash.replace("#", ""));
-                }     
+        if(["#action", "#comedy", "#drama", "#family", "#horror", "#music", "#thriller"].findIndex(cat => cat == window.location.hash)===-1){
+            if(["#top", "#tv", "#popular", "#upcoming"].findIndex(cat => cat == window.location.hash)===-1){
+                getMovieDetails(window.location.hash);
             }
-            else{ getMoviesBasedOnCategory(); }
+            else{
+                getMoviesBasedOnBrowse(window.location.hash.replace("#", ""));
+            }     
+        }
+        else{ getMoviesBasedOnCategory(); }
     }
     else{
-        await bringMainMenu();
+         bringMainMenu();
     }
 
     favouriteView.showOrHideFavouritesPanel(state.favouriteObj.getAllMovies());

@@ -3,6 +3,8 @@ import {getDomElements, recieveConfigData, recieveGenres} from './base';
 let configurationData = recieveConfigData();
 let genresData = recieveGenres();
 
+console.log(configurationData, genresData);
+
 export const clearSearchField = ()=>{
     getDomElements.searchText.value = "";
 }
